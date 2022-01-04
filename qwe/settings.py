@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-ow=9%^v$+br7y)3j^pyq1%$n4f1_3y2igxp753^0fpu-=d6qgj
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+import os
 ALLOWED_HOSTS = ["*"]
 
 
@@ -52,6 +52,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'qwe.urls'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(BASE_DIR / "db.sqlite3"),
+    }
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -77,7 +84,7 @@ WSGI_APPLICATION = 'qwe.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

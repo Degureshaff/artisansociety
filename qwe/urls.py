@@ -19,7 +19,7 @@ from ini import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("index/", views.index),
+    path("", views.index),
     path("indexkg/", views.indexkg),
     path("indexen/", views.indexen),
     path("galery/", views.galery),
